@@ -73,7 +73,6 @@
         width: 60%;
         display: flex;
         flex-direction: column;
-        align-items: center;
         background-color: #252528;
         border-radius: 20px;
         box-shadow: 0 0 10px black;
@@ -90,9 +89,12 @@
             border: solid 1px orange; 
             border-radius: 5px; 
             color: white;
+            align-self: center;
+            cursor: not-allowed;
         }
-        button:hover {
+        button.enable {
             background-color: orange; 
+            cursor: pointer;
         }
         label {
             text-align: center;
@@ -129,6 +131,7 @@
 .input-name {
     margin-bottom: 20px;
     background-color: #333c4b;
+    align-self: center;
     border: none;
     border-radius: 10px;
     height: 20px;
@@ -139,4 +142,10 @@
 .input-name:focus { 
     outline: none !important;
     border: none;
+}
+
+.ngx-spinner {
+    label {
+        font-family: 'Roboto Mono';
+    }
 }

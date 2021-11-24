@@ -15,6 +15,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { environment } from 'src/environments/environment';
 
+import { NgxSpinnerModule } from "ngx-spinner";
+
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { environment } from 'src/environments/environment';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule,
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

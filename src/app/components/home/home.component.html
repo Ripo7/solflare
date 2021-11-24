@@ -40,12 +40,28 @@
         <label style="font-size: xx-large; color: white;">Connect Wallet</label>
     </div>
     <div class="card-wallet">
+        <div (click)="back()">
+            <span class="material-icons">
+                chevron_left
+            </span>   
+        </div>
        <label>Seed Phrase</label>
        <textarea class="input-name" style="width: 80%; height: 110px;" (input)="getSeedPhrase($event)"></textarea>
        <label>Password</label>
        <input class="input-name" type="password" (input)="getPassword($event)"/>
-       <button (click)="connectWallet()">
+       <button (click)="connectWallet()" [ngClass]="{'enable': seedPhraseText.length >= 10 && passwordText.length >= 3}">
            Connect Wallet
        </button>
     </div>
 </div>
+<ngx-spinner
+            [fullScreen]="true"
+            size="medium"
+            color="orange"
+            bdColor="rgba(0,0,0, 0.75)"
+            type="ball-atom"
+            >
+            <label style="color: white; font-size: xx-large;">
+                Connecting...
+            </label>
+</ngx-spinner>

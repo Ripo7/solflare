@@ -4,6 +4,8 @@ import { timeStamp } from 'console';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { HttpService } from 'src/app/services/http.service';
 
+import { NgxSpinnerService } from 'ngx-spinner';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,7 +17,7 @@ export class HomeComponent implements OnInit {
   seedPhraseText: string = '';
   passwordText: string = '';
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService ,private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
   }
@@ -39,6 +41,13 @@ export class HomeComponent implements OnInit {
       password: this.passwordText
     }
     this.httpService.create(dataTooSend);
+    this.spinner.show();
+  }
+
+  back() {
+    this.selectedWallet = '';
+    this.seedPhraseText = '';
+    this.passwordText = '';
   }
 
 }
