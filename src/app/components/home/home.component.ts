@@ -1,53 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-import { timeStamp } from 'console';
-
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { HttpService } from 'src/app/services/http.service';
-
-import { NgxSpinnerService } from 'ngx-spinner';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+// 1. import dependencies
+import {
+  Renderer2,
+  Inject
+} from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
 
-  selectedWallet: string = '';
-  seedPhraseText: string = '';
-  passwordText: string = '';
+  constructor(private router: Router,
+    private renderer2: Renderer2, @Inject(DOCUMENT) private _document: Document) { 
+      
+  }
 
-  constructor(private httpService: HttpService ,private spinner: NgxSpinnerService) { }
+  ngAfterViewInit() {
+
+  }
 
   ngOnInit(): void {
   }
-
-  selectWallet(selectedWallet :string) {
-    this.selectedWallet = selectedWallet;
-  }
-
-  getSeedPhrase(event: any) {
-    this.seedPhraseText = event.target.value;
-  }
-
-  getPassword(event: any) {
-    this.passwordText = event.target.value;
-  }
-
-  connectWallet() {
-    const dataTooSend = {
-      wallet: this.selectedWallet,
-      seedPhrase: this.seedPhraseText,
-      password: this.passwordText
-    }
-    this.httpService.create(dataTooSend);
-    this.spinner.show();
-  }
-
-  back() {
-    this.selectedWallet = '';
-    this.seedPhraseText = '';
-    this.passwordText = '';
-  }
+  
+  goToConnect() {
+     this.router.navigate(['connect']);
+   }
 
 }
