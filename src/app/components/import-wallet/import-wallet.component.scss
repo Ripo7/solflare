@@ -1,4 +1,15 @@
 
+
+.btn-blue {
+    background-color: #037DD6; 
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+   }
+
+   .btn-blue:hover {
+       background-color: #0372e9;
+   }
 @font-face {
     font-family: Roboto-Regular;
     src: url(./fonts/Roboto-Regular.ttf); 

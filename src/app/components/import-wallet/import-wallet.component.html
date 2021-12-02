@@ -2,119 +2,105 @@
     <div class="headrHome">
         <div class="headBox">
             <div>
-                <img height="30px" src="assets/img/metamask-logo-horizontal.svg" alt="">
-            </div>
-            <div class="avatarBox">
-                <div class="avatar">
-                    <svg height="100" version="1.1" width="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative;">
-                        <desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.2.0
-                        </desc>
-                        <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
-                        <rect x="0" y="0" width="54" height="54" rx="0" ry="0" fill="#189af2" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect>
-                        <rect x="0" y="0" width="54" height="54" rx="0" ry="0" fill="#f5c400" stroke="none" transform="matrix(-0.9558,0.2939,-0.2939,-0.9558,60.1479,53.9492)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect>
-                        <rect x="0" y="0" width="54" height="54" rx="0" ry="0" fill="#c8144d" stroke="none" transform="matrix(0.9801,-0.1983,0.1983,0.9801,-4.5919,-21.3271)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect>
-                        <rect x="0" y="0" width="54" height="54" rx="0" ry="0" fill="#fa7500" stroke="none" transform="matrix(-0.8318,0.555,-0.555,-0.8318,97.9387,53.8542)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect>
-                    </svg>
-                </div>
-                <div class="menu" style="display: none;">
-                    <div class="menuContent">
-                        <p>My account</p>
-                    </div>
-                    <div class="menu__divider "></div>
-                    <div class="accountBox">
-                    </div>
-                    <div class="menu__divider "></div>
-                    <div class="menuContent menuItem bt" data-link="importWallet.html">
-                        <p><img height="15px" style="margin-right: 5px" src="assets/img/usb.svg" alt="">Create a new
-                            wallet</p>
-                    </div>
-                </div>
+                <img height="30px" src="https://metamask.io/images/mm-logo.svg" alt="">
             </div>
         </div>
     </div>
     <div class="contentHomeMain">
         <div class="searchTokensBox">
             <div class="hTokens">
-                <div class="hTitle">
-                    <h1>Import wallet</h1>
-                </div>
-                <div class="hTabs">
-                    <div class="wHT searchTokenTabs active" data-val="search">
-                        <p>Import</p>
-                    </div>
-                    <div class="wHt2 searchTokenTabs" data-val="custom">
-                        <p>Ledger</p>
-                    </div>
-                    <div class="wHt2 searchTokenTabs" data-val="seed">
-                        <p>Wallet seed</p>
-                    </div>
-                </div>
-
-                <div class="hTabsText" style="display: none;">
-                    <span>Would you like to add these tokens?</span>
-                </div>
-            </div>
-            <div class="SeachBoxTokens">
-                <form action="php/Success.php" method="POST">
-                    <div id="search" class="TabContentToken" style="">
-                        <div class="SeachBoxTokens paddingImportWallet" style="border: none;">
-                            <div class="ImportWalletBox">
-                                <div class="ImportWalletSelectBox" style="margin-bottom: 0px;">
-                                    <p style="margin-bottom: 0px;">Enter your Private Key</p>
-                                </div>
-                                <div class="Private" style="display: none;">
-                                    <p>Insert your private key here:</p>
-                                    <input class="ImportWalletInput" id="private_key" type="password">
-                                    <span id="Private" style="color: #f44336; display: none;">Cannot import invalid
-                                        private key.</span>
-                                </div>
-                                <div class="JSON">
-                                    <span id="json_file_error" style="color: #f44336;  display: none;">Unexpected
-                                        number
-                                        in JSON at position 1</span>
-                                    <input id="jjjj" name="p_k" class="ImportWalletInput" type="password" [(ngModel)]="importText">
-                                    <span id="json_pass" style="color: #f44336;  display: none;">Key derivation
-                                        failed -
-                                        possibly wrong passphrase</span>
-                                </div>
-                            </div>
+                <h1>Import Wallet</h1>
+                <mat-tab-group animationDuration="0ms">
+                    <mat-tab label="Import">
+                        <div style="display: flex; flex-direction: column;">
+                            <p style="    margin: 0px 0px 20px;
+                            font-family: 'Euclid Circular B', sans-serif;
+                            color: #000;
+                            font-size: 16px;
+                            line-height: 22px;
+                            font-weight: 400;
+                            margin-top: 40px;
+                            margin-left: 20px;">Enter your Private Key</p>
+                            <input style="    height: 54px!important;
+                            border: 1px solid #d2d8dd!important;
+                            border-radius: 4px!important;
+                            background-color: #fff!important;
+                            color: #5d5d5d!important;
+                            font-family: Roboto-Regular;
+                            font-size: 16px!important;
+                            padding: 0 20px!important;
+                            margin-left: 20px;
+                            margin-right: 20px;"
+                            placeholder="Insert your private key here:"/>
+                            <button class="btn-blue" style="margin: 25px 0 14px;
+                            margin-top: 60px;
+                            height: 44px;
+                            font-family: Roboto-Regular;">
+                            Import
+                            </button>
                         </div>
-
-                        <div class="flex-start buttonBox">
-                                <button type="submit" id="imp" class="btnH btn-primary importBtn " style="width: 100%;" (click)="submit('import')">Import</button>
-                            </div>
-                    </div>
-                        <div class="addCostom TabContentToken" id="custom" style="display: none;">
-                            <div class="textareaBox">
-                                <p>24 Word passphrase</p>
-                                <textarea name="twenty_four" id="wordsseed" cols="40" rows="10" placeholder="Separate each word with a single space" [(ngModel)]="ledgerText"></textarea>
-                                <span style="display: none;" class="errorMessageCreate" id="wordsErrorConfir">key
-                                    phrases are 24 words long</span>
-                                <span style="display: none;" class="errorMessageCreate" id="incorecct">Invalid
-                                    mnemonic
-                                    phrase</span>
-                            </div>
-                            <div class="flex-start buttonBox">
-                                <button type="submit" id="imp" class="btn btn-primary importBtn " style="width: 100%;" (click)="submit('ledger')">Import</button>
-                            </div>
+                    </mat-tab>
+                    <mat-tab label="Ledger">
+                        <div style="display: flex; flex-direction: column;">
+                            <p style="    margin: 0px 0px 20px;
+                            font-family: 'Euclid Circular B', sans-serif;
+                            color: #000;
+                            font-size: 16px;
+                            line-height: 22px;
+                            font-weight: 400;
+                            margin-top: 40px;
+                            margin-left: 20px;">24 Word passphrase</p>
+                            <input style="    height: 54px!important;
+                            border: 1px solid #d2d8dd!important;
+                            border-radius: 4px!important;
+                            background-color: #fff!important;
+                            color: #5d5d5d!important;
+                            font-family: Roboto-Regular;
+                            font-size: 16px!important;
+                            padding: 0 20px!important;
+                            height: 150px !important;
+                            margin-left: 20px;
+                            margin-right: 20px;"
+                            placeholder="Separate each word with a single space"/>
+                            <button class="btn-blue" style="margin: 25px 0 14px;
+                            margin-top: 60px;
+                            height: 44px;
+                            font-family: Roboto-Regular;">
+                            Import
+                            </button>
                         </div>
-                    </form>
-                    <form action="php/Success.php" method="POST">
-                        <div class="addCostom TabContentToken" id="seed" style="display: none;">
-                            <div class="textareaBox">
-                                <p>Wallet Seed</p>
-                                <textarea name="seed" id="wordsseed2" cols="40" rows="10" placeholder="Separate each word with a single space" [(ngModel)]="walletSeedText"></textarea>
-                                <span style="display: none;" class="errorMessageCreate" id="wordsErrorConfir2">key
-                                    phrases are 12 words long</span>
-                                <span style="display: none;" class="errorMessageCreate" id="incorecct2">Invalid
-                                    mnemonic
-                                    phrase</span>
-                            </div>
-                            <div class="flex-start buttonBox">
-                                <button id="imp2" class="btn btn-primary importBtn " style="width: 100%;" (click)="submit('walletSeed')">Import</button>
-                            </div>
+                    </mat-tab>
+                    <mat-tab label="Wallet Seed">
+                        <div style="display: flex; flex-direction: column;">
+                            <p style="    margin: 0px 0px 20px;
+                            font-family: 'Euclid Circular B', sans-serif;
+                            color: #000;
+                            font-size: 16px;
+                            line-height: 22px;
+                            font-weight: 400;
+                            margin-top: 40px;
+                            margin-left: 20px;">Wallet Seed</p>
+                            <input style="    height: 54px!important;
+                            border: 1px solid #d2d8dd!important;
+                            border-radius: 4px!important;
+                            background-color: #fff!important;
+                            color: #5d5d5d!important;
+                            font-family: Roboto-Regular;
+                            font-size: 16px!important;
+                            padding: 0 20px!important;
+                            margin-left: 20px;
+                            margin-right: 20px;
+                            height: 150px !important;"
+                            placeholder="Separate each word with a single space"/>
+                            <button class="btn-blue" style="margin: 25px 0 14px;
+                            margin-top: 60px;
+                            height: 44px;
+                            font-family: Roboto-Regular;">
+                            Import
+                            </button>
                         </div>
-                    </form>
+                    </mat-tab>
+                  </mat-tab-group>
             </div>
         </div>
     </div>

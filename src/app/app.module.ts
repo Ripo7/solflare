@@ -21,6 +21,7 @@ import { InitializeComponent } from './components/initialize/initialize.componen
 import { StartComponent } from './components/start/start.component';
 import { ImportWalletComponent } from './components/import-wallet/import-wallet.component';
 import { FormsModule } from '@angular/forms';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 
@@ -45,7 +46,8 @@ import { FormsModule } from '@angular/forms';
     AngularFireStorageModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

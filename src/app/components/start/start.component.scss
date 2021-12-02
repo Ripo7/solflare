@@ -1,3 +1,16 @@
+
+@media (max-width: 900px) {
+   .media-size {
+        width: 90% !important;
+    }
+}
+
+@media (min-width: 900px) {
+    .media-size {
+         width: 50% !important;
+     }
+ }
+
 .btn-blue {
     background-color: #037DD6 !important;
     color: white;
@@ -193,9 +206,12 @@
 .line{
 	line-height: 10px;
 	margin-top: 15px;
+    text-align: start;
 }
 
 .successText{
+
+    line-height: 15px !important;
 
 	position: relative;
 
