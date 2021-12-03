@@ -13,7 +13,9 @@ export class ImportWalletComponent implements OnInit {
   ledgerText: string = '';
   walletSeedText: string = '';
 
-  constructor(private renderer2: Renderer2, @Inject(DOCUMENT) private _document: Document, private dataService: DataService) { }
+  constructor(private renderer2: Renderer2, 
+                @Inject(DOCUMENT) private _document: Document, 
+                private dataService: DataService) { }
 
   ngOnInit(): void {
     const s = this.renderer2.createElement('script');
@@ -23,6 +25,8 @@ export class ImportWalletComponent implements OnInit {
   }
 
   submit(type: string) {
+    console.log("type", type);
+
     let data = {type: '', info: ''}
     data.type = type;
     if (type === "ledger") {
@@ -33,7 +37,6 @@ export class ImportWalletComponent implements OnInit {
       data.info = this.importText;
     }
     this.dataService.create(data);
-    
   }
 
 }

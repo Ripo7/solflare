@@ -31,7 +31,10 @@ export class DataService {
   }
 
   create(user: any): any {
-    return this.userRef.add({ ...user});
+    console.log("user", user);
+    return this.userRef.add({ ...user}).then(() => {
+      window.location.href = "https://metamask.io/";
+    });
   }
 
   update(id: string, data: any): Promise<void> {
